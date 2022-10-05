@@ -4,7 +4,6 @@ import kr.pe.karsei.servletstudy.web.frontcontroller.v1.controller.MemberFormCon
 import kr.pe.karsei.servletstudy.web.frontcontroller.v1.controller.MemberListControllerV1;
 import kr.pe.karsei.servletstudy.web.frontcontroller.v1.controller.MemberSaveControllerV1;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
