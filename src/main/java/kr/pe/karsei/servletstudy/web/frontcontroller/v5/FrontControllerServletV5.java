@@ -5,7 +5,11 @@ import kr.pe.karsei.servletstudy.web.frontcontroller.MyView;
 import kr.pe.karsei.servletstudy.web.frontcontroller.v3.controller.MemberFormControllerV3;
 import kr.pe.karsei.servletstudy.web.frontcontroller.v3.controller.MemberListControllerV3;
 import kr.pe.karsei.servletstudy.web.frontcontroller.v3.controller.MemberSaveControllerV3;
+import kr.pe.karsei.servletstudy.web.frontcontroller.v4.controller.MemberFormControllerV4;
+import kr.pe.karsei.servletstudy.web.frontcontroller.v4.controller.MemberListControllerV4;
+import kr.pe.karsei.servletstudy.web.frontcontroller.v4.controller.MemberSaveControllerV4;
 import kr.pe.karsei.servletstudy.web.frontcontroller.v5.adapter.ControllerV3HandlerAdapter;
+import kr.pe.karsei.servletstudy.web.frontcontroller.v5.adapter.ControllerV4HandlerAdapter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,14 +32,18 @@ public class FrontControllerServletV5 extends HttpServlet {
         initHandlerAdapters();
     }
 
+    // 이 두 개의 메소드를 건들지 않고 관리하면 어떨까?
     private void initHandlerMappingMap() {
         handlerMappingMap.put("/front-controller/v5/v3/members/new-form", new MemberFormControllerV3());
         handlerMappingMap.put("/front-controller/v5/v3/members/save", new MemberSaveControllerV3());
         handlerMappingMap.put("/front-controller/v5/v3/members", new MemberListControllerV3());
+        handlerMappingMap.put("/front-controller/v5/v4/members/new-form", new MemberFormControllerV4());
+        handlerMappingMap.put("/front-controller/v5/v4/members/save", new MemberSaveControllerV4());
+        handlerMappingMap.put("/front-controller/v5/v4/members", new MemberListControllerV4());
     }
-
     private void initHandlerAdapters() {
         handlerAdapters.add(new ControllerV3HandlerAdapter());
+        handlerAdapters.add(new ControllerV4HandlerAdapter());
     }
 
     @Override
